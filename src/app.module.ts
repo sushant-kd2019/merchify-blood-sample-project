@@ -6,6 +6,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { UsersModule } from './users/users.module';
 import { BloodSamplesModule } from './blood_samples/blood_samples.module';
 import { BloodSampleRequestsModule } from './blood_sample_requests/blood_sample_requests.module';
+import { APP_GUARD } from '@nestjs/core';
+import { RolesGuard } from './auth/roles.guard';
 
 @Module({
   imports: [
@@ -16,6 +18,12 @@ import { BloodSampleRequestsModule } from './blood_sample_requests/blood_sample_
     BloodSampleRequestsModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    {
+      provide: APP_GUARD,
+      useClass: RolesGuard,
+    }
+  ],
 })
 export class AppModule {}

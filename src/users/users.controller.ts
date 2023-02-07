@@ -1,5 +1,7 @@
 import { BadRequestException, Body, ConflictException, Controller, Get, Post } from '@nestjs/common';
 import { UsersService } from './users.service';
+import { Role } from 'src/auth/roles.enum';
+import { Roles } from 'src/auth/roles.decorator';
 
 
 @Controller('users')
