@@ -3,7 +3,7 @@ import { HydratedDocument } from 'mongoose';
 
 export type HospitalDocument = HydratedDocument<Hospital>;
 
-@Schema()
+@Schema({timestamps: true})
 export class Hospital {
   @Prop({ required: true })
   name: string;
@@ -12,7 +12,7 @@ export class Hospital {
   email: string;
 
   @Prop({ required: true })
-  hashed_password: string;
+  password: string;
 }
 
-export const CatSchema = SchemaFactory.createForClass(Hospital);
+export const HospitalSchema = SchemaFactory.createForClass(Hospital);

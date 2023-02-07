@@ -3,19 +3,19 @@ import { HydratedDocument } from 'mongoose';
 
 export type RecieverDocument = HydratedDocument<Reciever>;
 
-@Schema()
+@Schema({timestamps: true})
 export class Reciever {
   @Prop({ required: true })
   name: string;
+  
+  @Prop({ required: true })
+  email: string;
+
+  @Prop({ required: true })
+  password: string;
 
   @Prop({ required: true })
   blood_type: string;
-
-  @Prop({ required: true, default: false })
-  eligibility: boolean;
-
-  @Prop({ required: true })
-  hashed_password: string;
 }
 
-export const CatSchema = SchemaFactory.createForClass(Reciever);
+export const RecieverSchema = SchemaFactory.createForClass(Reciever);

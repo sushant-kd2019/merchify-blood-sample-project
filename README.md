@@ -71,3 +71,57 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+
+DB
+
+hospitals
+{
+  name,
+  email,
+  password,
+}
+
+recievers
+{
+  name,
+  email,
+  password,
+  blood_type
+}
+
+blood_samples
+{
+  hospital_id,
+  blood_type,
+  blood_amount_in_litres,
+  ts
+}
+
+blood_sample_requests
+{
+  reciever_id,
+  hospital_id,
+  blood_type,
+  blood_amount_in_litres,
+  request_date,
+}
+
+End points
+
+Public:
+get_all_blood_samples
+
+Hospital:
+/register_hospital
+/login_hospital
+/add_blood_sample_info
+/get_blood_samples_info
+/update_blood_sample_info
+/delete_blood_sample_info
+/{hospital_id}/get_all_requesters/{blood_type}
+
+Reciever:
+register_reciever
+login_reciever
+request_blood_sample/{blood_type}
