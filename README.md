@@ -111,18 +111,18 @@ blood_sample_requests
 ## End points
 
 Public:
-done get_all_blood_samples
+ /get_all_blood_samples
+ /login
 
 Hospital:
-done /register_hospital
-/login_hospital
-done /add_blood_sample_info
-done /get_blood_samples_info
-done /update_blood_sample_info
-done /delete_blood_sample_info
+/register_hospital
+/login_hospital 
+/add_blood_sample_info
+/get_blood_samples_info
+/update_blood_sample_info
+/delete_blood_sample_info
 /get_all_requesters/{blood_type}
 
 Reciever:
-done register_reciever
-login_reciever
-request_blood_sample/{blood_type}
+/register_reciever
+/request_blood_sample/{blood_type}
