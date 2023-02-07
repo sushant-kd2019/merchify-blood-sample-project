@@ -73,7 +73,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 Nest is [MIT licensed](LICENSE).
 
 
-DB
+## DB Schema
 
 hospitals
 {
@@ -107,7 +107,8 @@ blood_sample_requests
   request_date,
 }
 
-End points
+
+## End points
 
 Public:
 done get_all_blood_samples

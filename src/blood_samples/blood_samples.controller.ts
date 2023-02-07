@@ -1,5 +1,6 @@
 import { BadRequestException, Controller } from '@nestjs/common';
 import { Body, Delete, Get, Post, Put, Query } from '@nestjs/common/decorators';
+import { Roles } from 'src/auth/roles.decorator';
 import { BloodSamplesService } from './blood_samples.service';
 import { blood_sample_info_dto } from './blood_sample_info.dto';
 
@@ -13,6 +14,7 @@ export class BloodSamplesController {
   }
 
   @Get()
+  @Roles('hospital')
   async get_blood_sample_info(
     @Query('blood_type') blood_type: string,
     @Query('hospital_id') hospital_id: string,
@@ -29,6 +31,7 @@ export class BloodSamplesController {
   }
 
   @Post()
+  @Roles('hospital')
   async add_blood_sample_info(@Body() body: blood_sample_info_dto) {
     if (
       !body.blood_type ||
@@ -43,6 +46,7 @@ export class BloodSamplesController {
   }
 
   @Put()
+  @Roles('hospital')
   async update_blood_sample_info(@Body() body: blood_sample_info_dto) {
     if (
         !body.blood_type ||
@@ -59,6 +63,7 @@ export class BloodSamplesController {
   }
 
   @Delete()
+  @Roles('hospital')
   async delete_blood_sample_info(
     @Query('blood_type') blood_type: string,
     @Query('hospital_id') hospital_id: string,

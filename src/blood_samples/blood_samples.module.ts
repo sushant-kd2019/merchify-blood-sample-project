@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
+import { AuthModule } from 'src/auth/auth.module';
 import { UsersModule } from 'src/users/users.module';
 import { UsersService } from 'src/users/users.service';
 import { BloodSampleSchema } from './blood_sample.schema';
@@ -12,6 +13,7 @@ import { BloodSamplesService } from './blood_samples.service';
     MongooseModule.forFeature([
       { name: 'Blood_Sample', schema: BloodSampleSchema },
     ]),
+    AuthModule
   ],
   controllers: [BloodSamplesController],
   providers: [BloodSamplesService],
