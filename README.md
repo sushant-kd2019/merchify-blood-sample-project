@@ -75,54 +75,54 @@ Nest is [MIT licensed](LICENSE).
 
 ## DB Schema
 
-hospitals
-{
-  name,
-  email,
-  password,
+hospitals \
+{ \
+  name, \
+  email, \
+  password, \
 }
 
-recievers
-{
-  name,
-  email,
-  password,
-  blood_type
+recievers \
+{ \
+  name, \
+  email, \
+  password, \
+  blood_type \
 }
 
-blood_samples
-{
-  hospital_id,
-  blood_type,
-  blood_amount_in_litres,
-  ts
+blood_samples \
+{ \
+  hospital_id, \
+  blood_type, \
+  blood_amount_in_litres, \
+  ts \
 }
 
-blood_sample_requests
-{
-  reciever_id,
-  hospital_id,
-  blood_type,
-  blood_amount_in_litres,
-  request_date,
+blood_sample_requests \
+{ \
+  reciever_id, \
+  hospital_id, \
+  blood_type, \
+  blood_amount_in_litres, \
+  request_date \
 }
 
 
 ## End points
 
-Public:
- /get_all_blood_samples
+Public: \
+ /get_all_blood_samples \
  /login
 
-Hospital:
-/register_hospital
-/login_hospital 
-/add_blood_sample_info
-/get_blood_samples_info
-/update_blood_sample_info
-/delete_blood_sample_info
+Hospital: \
+/register_hospital \
+/login_hospital \
+/add_blood_sample_info \
+/get_blood_samples_info \
+/update_blood_sample_info \
+/delete_blood_sample_info \
 /get_all_requesters/{blood_type}
 
-Reciever:
-/register_reciever
+Reciever: \
+/register_reciever \
 /request_blood_sample/{blood_type}
